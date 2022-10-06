@@ -2,7 +2,13 @@
 document. addEventListener("DOMContentLoaded", function(){
 
   // Find the example form, and handle its submit event
-  const exampleForm = document.querySelector('#example-form')
+  // const exampleForm = document.querySelector('#example-form')
+  const holidayForm = document.querySelector('#holiday')
+  const squaredForm = document.querySelector('#squared')
+  const recursionForm = document.querySelector('#recursion')
+  const sumDigitsForm = document.querySelector('#sum-digits')
+
+
 
   exampleForm.addEventListener('submit', function(event){
     // Prevent the form from trying to submit to a server
