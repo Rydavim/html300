@@ -62,9 +62,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // check if input is a num
     if(!isNaN(userNumber)){
-      // check how many array elements are larger than the user number
-      const numsHigher = data.filter(elems => elems > userNumber)
-      let outputText = `There are ${numsHigher.length} numbers higher than ${userNumber} in the array.`
+      // check if the user's number is the highest
+      let outputText = (userNumber == Math.max(data) ? 'Wow, that\'s the largest number!' : 'Sorry, please guess again!')
       document.querySelector('#largest-num .output').innerHTML = outputText
     }
 
@@ -88,5 +87,10 @@ document.addEventListener("DOMContentLoaded", function(){
       let outputText = `The sum of the array elements and your chosen number is ${numSum}.`
       document.querySelector('#input-sum .output').innerHTML = outputText
     }
+
+    // clear the form input for reuse
+    inputField.value = ''
   })
 })
+
+// VORPAL - There is way too much duplicated code here. Experiment later with recycling parts and consolidating. 
