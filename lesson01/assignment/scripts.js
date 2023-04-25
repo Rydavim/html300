@@ -1,33 +1,96 @@
-// Code that requires the DOM be loaded should not be run until the DOM is loaded
-document. addEventListener("DOMContentLoaded", function(){
+// delays DOM-dependant code from running until the DOM has finished loading
+document.addEventListener("DOMContentLoaded", function(){
+  // save form elems to vars
+  const isInArray = document.querySelector('#is-in-array')
+  const howManyHigher = document.querySelector('#how-many-higher')
+  const largestNum = document.querySelector('#largest-num')
+  const inputSum = document.querySelector('#input-sum')
 
-  // Find the example form, and handle its submit event
-  const exampleForm = document.querySelector('#example-form')
+  // array for use in methods
+  let data = [12, 13, 34, 62, 81, 84, 97]
 
-  exampleForm.addEventListener('submit', function(event){
-    // Prevent the form from trying to submit to a server
+  isInArray.addEventListener('submit', function(event){
+    // prevent default action
     event.preventDefault()
 
-    // An array that we can transform based on user input
-    let data = [0, 1, 2, 3, 5, 8]
-
-    const inputField = document.querySelector('#example-form .input')
+    // get user input information
+    const inputField = document.querySelector('#is-in-array .input')
     const userInput = inputField.value
     const userNumber = parseInt(userInput)
 
-    // If the user's input was a number, push it into the array and continue
+    // check if input is a num
     if(!isNaN(userNumber)){
-      data.push(userNumber)
-
-      // Use reduce to sum all the numbers in the data array
-      const sum = data.reduce((accumulator, currentElement) => accumulator + currentElement);
-
-      // Output the total to the page- no need to convert the numeric sum back to a string, HTML will just print the number as a string
-      document.querySelector('#example-form .output').innerHTML = sum
+      // check if the user number is in the data array
+      const inArray = data.includes(userNumber)
+      let outputText = `Is ${userNumber} in the array? ${inArray}`
+      document.querySelector('#is-in-array .output').innerHTML = outputText
     }
 
-    // Clear the form field so the user can try again
+    // clear the form input for reuse
     inputField.value = ''
   })
 
+  howManyHigher.addEventListener('submit', function(event){
+    // prevent default action
+    event.preventDefault()
+
+    // get user input information
+    const inputField = document.querySelector('#how-many-higher .input')
+    const userInput = inputField.value
+    const userNumber = parseInt(userInput)
+
+    // check if input is a num
+    if(!isNaN(userNumber)){
+      // check how many array elements are larger than the user number
+      const numsHigher = data.filter(elems => elems > userNumber)
+      let outputText = `There are ${numsHigher.length} numbers higher than ${userNumber} in the array.`
+      document.querySelector('#how-many-higher .output').innerHTML = outputText
+    }
+
+    // clear the form input for reuse
+    inputField.value = ''
+  })
+
+  largestNum.addEventListener('submit', function(event){
+    // prevent default action
+    event.preventDefault()
+
+    // get user input information
+    const inputField = document.querySelector('#largest-num .input')
+    const userInput = inputField.value
+    const userNumber = parseInt(userInput)
+
+    // check if input is a num
+    if(!isNaN(userNumber)){
+      // check if the user's number is the highest
+      let outputText = (userNumber == Math.max(data) ? 'Wow, that\'s the largest number!' : 'Sorry, please guess again!')
+      document.querySelector('#largest-num .output').innerHTML = outputText
+    }
+
+    // clear the form input for reuse
+    inputField.value = ''
+  })
+
+  inputSum.addEventListener('submit', function(event){
+    // prevent default action
+    event.preventDefault()
+
+    // get user input information
+    const inputField = document.querySelector('#input-sum .input')
+    const userInput = inputField.value
+    const userNumber = parseInt(userInput)
+
+    // check if input is a num
+    if(!isNaN(userNumber)){
+      // check what number the user would like to add
+      let numSum = data.reduce((accumulator, current) => accumulator + current, userNumber)
+      let outputText = `The sum of the array elements and your chosen number is ${numSum}.`
+      document.querySelector('#input-sum .output').innerHTML = outputText
+    }
+
+    // clear the form input for reuse
+    inputField.value = ''
+  })
 })
+
+// VORPAL - There is way too much duplicated code here. Experiment later with recycling parts and consolidating. 

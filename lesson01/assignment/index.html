@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Assignment 1 - Part 2 Example</title>
+  <title>Assignment 1 - Part 2</title>
   <script src="scripts.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,14 +12,38 @@
 <body>
   <main>
     <h1>Using ES6+ Methods in DOM Interactions</h1>
-    <form id="example-form">
-      <label>Enter your favorite number:
+
+    <form id="is-in-array">
+      <label> Is your number in the array?
         <input type="text" class="input">
       </label>
-      <input type="submit" value="See Demo!">
-      <p>The total of my array elements summed with your favorite number is: <span class="output"></span></p>
+      <input type="submit" value="Check Array">
+      <p><span class="output"></span></p>
+    </form>
+
+    <form id="how-many-higher">
+      <label> How many numbers are higher than your number?
+        <input type="text" class="input">
+      </label>
+      <input type="submit" value="Check Array">
+      <p><span class="output"></span></p>
+    </form>
+
+    <form id="largest-num">
+      <label> What is the largest number in the array?
+        <input type="text" class="input">
+      </label>
+      <input type="submit" value="Guess">
+      <p><span class="output"></span></p>
+    </form>
+
+    <form id="input-sum">
+      <label> What number would you like to add to the sum of the array elements?
+        <input type="text" class="input">
+      </label>
+      <input type="submit" value="Sum">
+      <p><span class="output"></span></p>
     </form>
   </main>
 </body>
-
 </html>
