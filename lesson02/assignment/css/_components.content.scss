@@ -29,6 +29,8 @@ h1 {
   // Styles for Mobile
   @include media-query('mobile') {
     flex-direction: column;
+    margin: 10px;
+    border: 1.5rem solid $med-gray;
   }
 }
 
@@ -76,6 +78,8 @@ h1 {
   // Styles for Mobile
   @include media-query('mobile') {
     flex-basis: 100%;
+    margin: 1rem;
+    padding: 0.5rem;
   }
 
   ul {
