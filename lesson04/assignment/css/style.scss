@@ -1,0 +1,56 @@
+// COLORS
+$highlight-color: #a32c28; // dark red
+$dark-background: #535233; // dark evergreen
+$light-background: #f5f4d7; // cream
+$light-text: #f5f4d7; // cream
+
+// GENERAL
+* { box-sizing: border-box; }
+a {
+  text-decoration: none;
+  color: inherit; }
+html {
+  font-family: sans-serif;
+  background-color: $light-background;
+}
+
+// HEADER & NAV
+nav {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: $dark-background;
+  color: $light-text;
+}
+
+.nav-list li {
+  display: inline-block;
+  list-style: none;
+  padding: 2rem;
+}
+
+// I couldn't find an example of quite what I wanted, so I went off this basic structure to scale instead of changing the box-shadow.
+// .pulse { animation: pulse-animation 2s infinite; }
+// @keyframes pulse-animation {
+//   0% { box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2); }
+//   100% { box-shadow: 0 0 0 20px rgba(0, 0, 0, 0); }
+// }
+// transform icon size to scale up and down and appear to pulse
+.pulse {
+  animation: pulse 2s infinite;
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+}
+
+// transition using mixin template to change link color on mouseover
+@mixin transition($property: all, $duration: 500ms, $timing: ease) {
+  transition: $property $duration $timing;
+}
+.nav-list a {
+  color: $light-text;
+  @include transition(color, 0.5s, ease);
+}
+.nav-list a:hover {
+  color: $highlight-color;
+}
