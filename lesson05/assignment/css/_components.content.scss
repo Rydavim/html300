@@ -1,13 +1,52 @@
 html {
     box-sizing: border-box;
+    color: $text-color;
 }
 
 *,
 *:after,
 *:before {
     box-sizing: inherit;
+    margin: 0; // attempting to eliminate weird whitespace
 }
 
-.main {
-    padding: 2rem;
+li { list-style: none; } // no ugly list-item indicators
+a {
+  text-decoration: none;
+  color: inherit;
+} // ...or link underlines and weird colors
+
+// header
+header {
+  background-color: $header-bg;
+  padding: 1rem;
+}
+
+// navigation
+nav {
+  background-color: $nav-bg;
+  padding: 0.75rem;
+  // nav list items
+  li {
+    display: inline-block;
+    padding: 0.5rem;
+  }
+}
+
+// sidebar
+aside {
+  background-color: $sidebar-bg;
+  padding: 0.5rem;
+}
+
+// main content
+main {
+  background-color: $main-bg;
+  padding: 0.75rem;
+}
+
+// footer
+footer {
+  background-color: $footer-bg;
+  padding: 0.5rem;
 }
