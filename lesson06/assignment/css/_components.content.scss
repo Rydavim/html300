@@ -14,20 +14,12 @@ html {
 h1,
 .row h2 { text-align: center; }
 
-// visual grid styles
-.row { margin-bottom: 1rem; }
-// add some padding and a background color
-.col-sm-4,
-.col-md-6,
-.col-lg-12 {
-  padding: 0.5rem;
-  background-color: $bg-odds;
-}
-// distinguish between column blocks visually
-.col-sm-4:nth-child(even),
-.col-md-6:nth-child(even) {
-  background-color: $bg-evens;
-}
+// active nav item style
+.active { background-color: $active-bg; }
 
 // add some padding around the imgs
 .img-fluid { padding: 0.5rem; }
+
+// adding some color to show grid visually
+.row > div { background-color: $bg-odds; }
+.row > div:nth-child(even) { background-color: $bg-evens; }
