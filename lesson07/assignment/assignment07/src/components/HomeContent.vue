@@ -6,8 +6,12 @@
     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <!-- changes to button code to get it working with vue -->
-    <b-button id="popover-target" class="btn btn-lg btn-danger"> Drink Me! (Popover)</b-button>
+    <!-- conditionally change button class based on popover state -->
+    <b-button id="popover-target" :class="isPopoverVisible ? 'btn-success' : 'btn-danger'" class="btn btn-lg" @click="togglePopover">
+      <!-- v-if v-else to update button text based on popover visibility -->
+      <span v-if="isPopoverVisible">Put It Down!</span>
+      <span v-else>Drink Me!</span>
+    </b-button>
     <b-popover target="popover-target" triggers="click" placement="top">
       <template #title>Why would you do that?</template>
       Don't drink random things you find online!
@@ -18,6 +22,16 @@
 <script>
 export default {
   name: 'HomeContent',
+  data() {
+    return {
+      isPopoverVisible: false,  // tracking popover visibility, default false
+    };
+  },
+  methods: {
+    togglePopover() {
+      this.isPopoverVisible = !this.isPopoverVisible; // toggle popover state
+    }
+  },
   props: {
     msg: String
   }
