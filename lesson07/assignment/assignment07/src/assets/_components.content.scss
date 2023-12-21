@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+// add some padding
+.container { padding: 0.75rem; }
+// center important headings
+h1,
+.row h2 { text-align: center; }
+
+// active nav item style
+.active { background-color: $active-bg; }
+
+// add some padding around the imgs
+.img-fluid { padding: 0.5rem; }
+
+// adding some color to show grid visually
+.row > div { background-color: $bg-odds; }
+.row > div:nth-child(even) { background-color: $bg-evens; }

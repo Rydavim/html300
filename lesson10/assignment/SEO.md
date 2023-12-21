@@ -1,0 +1,10 @@
+OVERVIEW
+SEO is a fundamental strategy for improving a website's visibility on search engines like Google. You might have a fantastic website or online store, but if it doesn't appear in search results when people look for products, services, or information related to your business - it's like having a shop in the middle of a desert; no one will find it. SEO helps address this issue by optimizing various aspects of your website, both on and off the pages, to make it more appealing to search engines. This includes optimizing your content, using relevant keywords, ensuring your website loads quickly, and acquiring high-quality backlinks from other reputable websites. The goal is to rank higher in search engine results pages (SERPs), which can lead to increased organic traffic and potentially more customers or visitors to your site.
+
+Analytics is like having a magnifying glass to examine your website's performance and understand how users interact with it. Analytics tools provide you with valuable data about your website's traffic - such as where your visitors come from, which pages they visit the most, how long they stay on your site, and whether they complete desired actions like making a purchase or filling out a contact form. This data is crucial because it allows you to make informed decisions and continuously improve your website's user experience. For instance, if you notice that many users leave your site shortly after arriving, you can investigate why and make changes to keep them engaged. By combining SEO and analytics, you can develop a comprehensive strategy to not only attract more visitors but also provide them with a better online experience, ultimately leading to improved outcomes.
+
+SEO IDEAS
+1. Update pages to include unique title tags and meta descriptions.
+2. Continue improving semantic HTML to clarify heirarchy.
+3. Add robot tags to instruct crawling behavior of bots.
+Included things like description image alt tags and semantic structure are already implemented.
