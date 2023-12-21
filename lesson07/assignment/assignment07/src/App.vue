@@ -2,17 +2,8 @@
   <div id="app">
     <nav class="navbar bg-light justify-content-center">
       <ul class="nav">
-        <router-link tag="li" class="nav-item" to="/" exact>
-          <a class="nav-link">Home</a>
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/images">
-          <a class="nav-link">Images</a>
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/accordion">
-          <a class="nav-link">Accordion</a>
-        </router-link>
-        <router-link tag="li" class="nav-item" to="/grid">
-          <a class="nav-link">Grid</a>
+        <router-link v-for="(navLink, index) in navLinks" :key="index" tag="li" class="nav-item" active-class="active" :to="navLink.to" :exact="navLink.exact">
+          {{ navLink.txt }}
         </router-link>
       </ul>
     </nav>
@@ -22,9 +13,17 @@
 
 <script>
 export default {
-  name: 'App',
-  components: {
-
+  name: 'App';
+},
+data () {
+  return {
+    // nav link array for population
+    navLinks: [
+      { to: '/', exact: true, txt: 'Home' },
+      { to: '/images', exact: false, txt: 'Images' },
+      { to: '/accordion', exact: false, txt: 'Accordion' },
+      { to: '/grid', exact: false, txt: 'Grid' }
+    ]
   }
 }
 </script>
